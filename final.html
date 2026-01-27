@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Love Story - Sujal ❤️</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Pacifico&family=Poppins:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --soft-pink: #ffdae9;
+        --vibrant-pink: #ff85a2;
+        --soft-blue: #e0f2fe;
+        --soft-yellow: #fef3c7;
+        --comic-black: #2d3436;
+        --white: #ffffff;
+        --chunky-border: 4px solid var(--comic-black);
+        --bubble-shadow: 8px 8px 0px var(--comic-black);
+        --bubble-shadow-hover: 4px 4px 0px var(--comic-black);
+        --font-comic: "Pacifico", cursive;
+        --font-main: "Poppins", sans-serif;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: var(--font-main);
+        background: var(--soft-blue);
+        color: var(--comic-black);
+        overflow-x: hidden;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      /* Animated Background */
+      .bg-animation {
+        position: fixed;
+        inset: 0;
+        z-index: -2;
+        background: var(--soft-blue);
+        overflow: hidden;
+      }
+
+      .blob {
+        position: absolute;
+        width: 400px;
+        height: 400px;
+        background: var(--soft-pink);
+        filter: blur(80px);
+        border-radius: 50%;
+        z-index: -1;
+        animation: blobMove 20s infinite alternate ease-in-out;
+      }
+
+      .blob-1 {
+        top: -100px;
+        left: -100px;
+        background: var(--soft-pink);
+      }
+      .blob-2 {
+        bottom: -100px;
+        right: -100px;
+        background: var(--soft-yellow);
+        animation-delay: -5s;
+      }
+      .blob-3 {
+        top: 50%;
+        left: 50%;
+        background: #e9d5ff;
+        animation-delay: -10s;
+      }
+
+      @keyframes blobMove {
+        0% {
+          transform: translate(0, 0) scale(1);
+        }
+        33% {
+          transform: translate(100px, 50px) scale(1.2);
+        }
+        66% {
+          transform: translate(-50px, 150px) scale(0.8);
+        }
+        100% {
+          transform: translate(50px, -50px) scale(1.1);
+        }
+      }
+
+      .back-home {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        padding: 12px 25px;
+        background: var(--soft-yellow);
+        color: var(--comic-black);
+        border: var(--chunky-border);
+        box-shadow: 4px 4px 0px var(--comic-black);
+        text-decoration: none;
+        border-radius: 15px;
+        font-weight: 800;
+        z-index: 100;
+        transition: all 0.2s ease;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+      }
+
+      .back-home:hover {
+        transform: translateY(-2px);
+        box-shadow: 6px 6px 0px var(--comic-black);
+      }
+
+      .header {
+        margin-top: 80px;
+        margin-bottom: 40px;
+        text-align: center;
+        z-index: 10;
+      }
+
+      .header h1 {
+        font-family: var(--font-comic);
+        font-size: clamp(2.5rem, 8vw, 4.5rem);
+        color: var(--comic-black);
+        background: var(--white);
+        padding: 20px 40px;
+        border: var(--chunky-border);
+        box-shadow: var(--bubble-shadow);
+        border-radius: 30px;
+        transform: rotate(-2deg);
+        display: inline-block;
+      }
+
+      /* Film Strip Section */
+      .film-wrap {
+        width: 100%;
+        padding: 50px 0;
+        position: relative;
+        z-index: 5;
+        background: rgba(255, 255, 255, 0.4);
+        border-top: var(--chunky-border);
+        border-bottom: var(--chunky-border);
+        overflow: hidden;
+      }
+
+      .film-strip {
+        display: flex;
+        width: fit-content;
+        animation: scrollRoll 40s linear infinite;
+      }
+
+      @keyframes scrollRoll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      .film-strip:hover {
+        animation-play-state: paused;
+      }
+
+      .photo-card {
+        flex: 0 0 280px;
+        height: 380px;
+        margin: 0 25px;
+        background: var(--white);
+        border: var(--chunky-border);
+        box-shadow: 8px 8px 0px var(--comic-black);
+        padding: 15px 15px 50px 15px;
+        position: relative;
+        transform: rotate(var(--r));
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        border-radius: 10px;
+      }
+
+      .photo-card:hover {
+        transform: rotate(0deg) translateY(-20px) scale(1.05);
+        z-index: 100;
+        box-shadow: 15px 15px 0px var(--comic-black);
+      }
+
+      .photo-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 5px;
+        border: 2px solid var(--comic-black);
+      }
+
+      .photo-caption {
+        position: absolute;
+        bottom: 15px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        font-family: "Dancing Script", cursive;
+        font-size: 1.5rem;
+        color: var(--comic-black);
+        font-weight: 700;
+      }
+
+      /* Quote Section */
+      .quote-wrap {
+        margin-top: 60px;
+        margin-bottom: 60px;
+        width: 90%;
+        max-width: 800px;
+        position: relative;
+        height: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .quote-box {
+        background: var(--soft-pink);
+        border: var(--chunky-border);
+        box-shadow: var(--bubble-shadow);
+        padding: 30px 50px;
+        border-radius: 30px;
+        position: absolute;
+        opacity: 0;
+        transform: scale(0.8) translateY(20px);
+        transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        text-align: center;
+        width: 100%;
+      }
+
+      .quote-box.active {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+
+      .quote-text {
+        font-family: "Dancing Script", cursive;
+        font-size: clamp(1.5rem, 4vw, 2.5rem);
+        color: var(--comic-black);
+        font-weight: 700;
+        line-height: 1.3;
+      }
+
+      /* Particles */
+      #particle-canvas {
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+      }
+
+      @media (max-width: 600px) {
+        .photo-card {
+          flex: 0 0 220px;
+          height: 320px;
+        }
+        .header h1 {
+          font-size: 2rem;
+          padding: 15px 25px;
+        }
+        .quote-box {
+          padding: 20px 30px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg-animation">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+    </div>
+
+    <canvas id="particle-canvas"></canvas>
+
+    <a href="index.html" class="back-home">← REPLAY</a>
+
+    <div class="header">
+      <h1>For You, Sujal</h1>
+    </div>
+
+    <div class="film-wrap">
+      <div class="film-strip" id="film-strip">
+        <!-- Photos Loaded via JS -->
+      </div>
+    </div>
+
+    <div class="quote-wrap">
+      <div class="quote-box active" id="q0">
+        <p class="quote-text">
+          Every moment with you is a frame I want to keep forever.
+        </p>
+      </div>
+      <div class="quote-box" id="q1">
+        <p class="quote-text">Your heart is my favorite destination, always.</p>
+      </div>
+      <div class="quote-box" id="q2">
+        <p class="quote-text">Life is more colorful with you in my view.</p>
+      </div>
+      <div class="quote-box" id="q3">
+        <p class="quote-text">
+          You're the highlight of my every single day. 💕
+        </p>
+      </div>
+      <div class="quote-box" id="q4">
+        <p class="quote-text">Forever's not long enough with you, Sujal.</p>
+      </div>
+    </div>
+
+    <script>
+      const strip = document.getElementById("film-strip");
+      const numPhotos = 20;
+
+      const photoCaptions = [
+        "Pure Happiness ✨",
+        "Me & You ❤️",
+        "That Smile! 😊",
+        "Perfect Day 📸",
+        "My Favorite 💖",
+        "Forever Us 💍",
+        "Sweet Memories 🍬",
+        "Only You 🌙",
+        "Better Together 👩‍❤️‍👨",
+        "My Whole World 🌎",
+        "Simply Cute 🌸",
+        "Infinity Love ♾️",
+        "Best Person 🏆",
+        "Stay Forever 🥺",
+        "Loving You 🌹",
+        "My Heartbeat 💓",
+        "Greatest Gift 🎁",
+        "Magic Moments ✨",
+        "True Love 💘",
+        "Soulmate ❤️",
+      ];
+
+      function loadPhotos() {
+        let content = "";
+        for (let i = 1; i <= numPhotos; i++) {
+          const rotation = (Math.random() * 8 - 4).toFixed(1);
+          content += `
+                    <div class="photo-card" style="--r: ${rotation}deg">
+                        <img src="couple_imgs/${i}.jpeg" alt="Memory" loading="lazy">
+                        <div class="photo-caption">${photoCaptions[i - 1] || "Moment #" + i}</div>
+                    </div>
+                `;
+        }
+        strip.innerHTML = content + content; // Duplicate for seamless scroll
+      }
+      loadPhotos();
+
+      // Quote Rotation
+      let currentQuote = 0;
+      const boxes = document.querySelectorAll(".quote-box");
+      setInterval(() => {
+        boxes[currentQuote].classList.remove("active");
+        currentQuote = (currentQuote + 1) % boxes.length;
+        boxes[currentQuote].classList.add("active");
+      }, 5000);
+
+      // Simple Heart Particle System
+      const canvas = document.getElementById("particle-canvas");
+      const ctx = canvas.getContext("2d");
+      let particles = [];
+
+      function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+      window.addEventListener("resize", resize);
+      resize();
+
+      class Particle {
+        constructor() {
+          this.reset();
+        }
+        reset() {
+          this.x = Math.random() * canvas.width;
+          this.y = canvas.height + 20;
+          this.size = Math.random() * 15 + 10;
+          this.speed = Math.random() * 2 + 1;
+          this.opacity = Math.random() * 0.5 + 0.3;
+          this.text = ["❤️", "💖", "🌸", "✨"][Math.floor(Math.random() * 4)];
+        }
+        update() {
+          this.y -= this.speed;
+          if (this.y < -30) this.reset();
+        }
+        draw() {
+          ctx.save();
+          ctx.globalAlpha = this.opacity;
+          ctx.font = `${this.size}px serif`;
+          ctx.fillText(this.text, this.x, this.y);
+          ctx.restore();
+        }
+      }
+
+      for (let i = 0; i < 20; i++) particles.push(new Particle());
+
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach((p) => {
+          p.update();
+          p.draw();
+        });
+        requestAnimationFrame(animate);
+      }
+      animate();
+    </script>
+  </body>
+</html>

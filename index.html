@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A romantic surprise - Will you be mine?"
+    />
+    <meta name="theme-color" content="#FF85A2" />
+    <title>With Love ❤️</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Pacifico&family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ANIMATED BACKGROUND -->
+    <div class="bg-animation">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+    </div>
+
+    <!-- INTRO SCREEN -->
+    <div id="intro-screen" class="intro-screen">
+      <div class="intro-container">
+        <div class="intro-bear">
+          <img src="assets/cute_bear.png" id="bear-img" alt="Cute Bear" />
+        </div>
+
+        <h1 class="intro-title" id="intro-title">Will you be mine? 🥺</h1>
+
+        <p class="intro-subtitle" id="intro-subtitle">
+          I want to spend every single second of my journey with you.
+        </p>
+
+        <div class="intro-buttons">
+          <button id="intro-yes-btn" class="intro-btn yes-btn">YES</button>
+          <button id="intro-no-btn" class="intro-btn no-btn">NO</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main-content" class="main-content hidden">
+      <canvas id="hearts-canvas"></canvas>
+
+      <div id="gifts-section" class="gifts-container">
+        <h1 class="gifts-title">Something for You</h1>
+
+        <div class="gifts-grid">
+          <!-- Gift 1 -->
+          <div class="gift-card" id="gift-1">
+            <div class="gift-icon">
+              <img src="assets/gift_cat.png" alt="Quiz" />
+            </div>
+            <p class="gift-label">A Test</p>
+          </div>
+
+          <!-- Gift 2 -->
+          <div class="gift-card" id="gift-2">
+            <div class="gift-icon">
+              <img src="assets/gift_bear.png" alt="Letter" />
+            </div>
+            <p class="gift-label">A Letter</p>
+          </div>
+
+          <!-- Gift 3 -->
+          <div class="gift-card" id="gift-3">
+            <div class="gift-icon">
+              <img src="assets/gift_rabbit.png" alt="Photos" />
+            </div>
+            <p class="gift-label">Memories</p>
+          </div>
+        </div>
+
+        <button id="finally-btn" class="finally-btn">FINALLY... ❤️</button>
+      </div>
+
+      <!-- QUIZ OVERLAY -->
+      <div id="quiz-overlay" class="quiz-overlay hidden">
+        <div class="quiz-card">
+          <h2 class="quiz-header">Quiz Time 😚</h2>
+          <div id="quiz-content">
+            <p class="quiz-question" id="quiz-question-text"></p>
+            <div class="quiz-options" id="quiz-options"></div>
+            <p id="quiz-error" class="quiz-error hidden">Try again, baby! 😚</p>
+          </div>
+          <div id="quiz-success" class="quiz-success hidden">
+            <p class="success-text">Yay! You passed the test! ❤️</p>
+          </div>
+          <button id="quiz-back-btn" class="quiz-back-btn">BACK</button>
+        </div>
+      </div>
+
+      <!-- LETTER OVERLAY -->
+      <div id="letter-overlay" class="quiz-overlay hidden">
+        <div class="quiz-card">
+          <h2 class="quiz-header">A Letter For You 🥺</h2>
+          <div class="letter-paper">
+            <p class="letter-text-content">
+              My Baby,<br /><br />
+              Thank you for being my person. I want to hold your hand through
+              every season of life. You are my home, you are my everything, and
+              I love you so so much.<br /><br />
+              Be the same as you are, and sorry for irritating you. No one can
+              replace you from my heart, you're always my no.1.<br /><br />
+              Forever yours. ❤️
+            </p>
+          </div>
+          <button id="letter-back-btn" class="quiz-back-btn">BACK</button>
+        </div>
+      </div>
+
+      <!-- PHOTO WALL OVERLAY -->
+      <div id="photo-wall-overlay" class="quiz-overlay hidden">
+        <div class="quiz-card" style="max-width: 800px">
+          <h2 class="quiz-header">Sweet Memories �</h2>
+          <div class="photo-grid" id="photo-grid"></div>
+          <button id="photo-wall-back-btn" class="quiz-back-btn">BACK</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
